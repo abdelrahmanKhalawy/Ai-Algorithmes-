@@ -67,9 +67,13 @@ def heuristic(state):
 def A_star():
     counter = itertools_count()
     q = []
+    g0 = 0
+    h0 = heuristic(initial_state())
+    f0 = g0 + g0
+
     heappush(
         q, (0 + heuristic(initial_state()), 0, next(counter), initial_state(), [], [])
-    )
+    ) 
     visited = set()
 
     while q:
